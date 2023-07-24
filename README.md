@@ -40,5 +40,8 @@ Records for the forty vendor transactions relevant to the previously mentioned f
 ## ERD
 ![Entity-Relationship Diagram](Budget_Arilines_ERD.png)
 
+### Relational Data Model
+![Relational Data Model](Budget_Arilines_RELATIONALdataMODEL.png)
+
 
 
