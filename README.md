@@ -38,4 +38,7 @@ Stored vendor information includes the assigned vendor identifier, vendor name, 
 Records for the forty vendor transactions relevant to the previously mentioned flights, which includes the transaction identifier, vendor identifier, and transaction total for each transaction.
 
 
+![Entity-Relationship Diagram](http://url/to/img.png)
+
+
 
