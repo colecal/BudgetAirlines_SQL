@@ -43,5 +43,40 @@ Records for the forty vendor transactions relevant to the previously mentioned f
 ### Relational Data Model
 ![Relational Data Model](Budget_Arilines_RELATIONALdataMODEL.png)
 
+# Insightful Questions and their corresponding Queries
+
+## Give me a listt of Customers on flight 'xyz'?
+Select Ticket.CustomerID, CustomerEmail, TicketID, FlightID <br />
+From  Customer <br />
+inner join Ticket on Ticket.CustomerID = Customer.CustomerID <br />
+Where Ticket.FlightID = '526xyw409' <br />
+
+## Give me a list of customers with loyalty status.
+Select CustomerID, CustomerFirstName,CustomerLastName, CustomerEmail, LoyaltyMember <br />
+From Customer <br />
+Where LoyaltyMember = 'TRUE' <br />
+
+## Give me a list of transactions greater than 5000 for the vendor Chevron(i.e.'885iij235').
+Select TransactionID, VendorName, TransactionTotal <br />
+from VendorTransaction, Vendor <br />
+where Vendor.VendorID = '885iij235' and TransactionTotal>5000 <br />
+order by TransactionTotal desc 
+
+## Which flights departed from LAX?'
+Select Ticket.FlightID, Flight.Departure, Count(Ticket.TicketID) As noOfPassengers <br />
+From Ticket <br />
+inner join Flight on Ticket.FlightID = Flight.FlightID <br />
+where Departure = 'LAX' <br />
+Group By Ticket.FlightID, Flight.Departure 
+
+## What were the salaries of the pilots that arrived at LAX?'
+Select Pilot.PilotID, Pilot.FirstName, Pilot.LastName, Destination, Pilot.Salary <br />
+From Pilot <br />
+inner join Flight on Pilot.PilotID = Flight.PilotID <br />
+where Destination = 'LAX'  <br />
+order by Pilot.Salary desc
+
+
+
 
 
